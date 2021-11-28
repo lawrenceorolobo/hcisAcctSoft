@@ -1,0 +1,71 @@
+h1{
+    color:#0026FF;
+    font-family: Leelawadee UI;
+    text-decoration: underline;
+    padding-left: 170px;
+    padding-top: 64px;
+}
+
+.detailContainer{
+    border: 2px solid black;
+    border-radius: 50px;
+    border-color: #0026FF;
+    margin-left: 250px;
+    width: 860px;
+    height: 600px;
+    padding-top: 10px;
+    padding-left: 80px;
+    padding-right: 80px;
+
+}
+
+p{
+    float: left;
+    width: 200px;
+    height: 42px;
+    margin-bottom: 37px;
+    margin-right: 20px;
+    color:#0026FF;
+    font-family: Leelawadee UI;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+select{
+    float: right;
+    width: 489.27px;
+    height: 42px;
+    margin-top: 20px;
+    margin-bottom: 37px;
+    margin-right: 80px;
+}
+
+
+input{
+    float: right;
+    width: 489.27px;
+    height: 42px;
+    margin-top: 20px;
+    margin-bottom: 37px;
+    margin-right: 80px;
+}
+
+.form-submit{
+    width:300px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: #545E95;
+    font-family: Leelawadee UI;
+    font-size: 24px;
+    color: white;
+}
+
+
+#login{
+    color:#fafafa;
+    font-family: Leelawadee UI;
+    padding-left: 170px;
+    padding-top: 64px;
+    float:right;   
+}

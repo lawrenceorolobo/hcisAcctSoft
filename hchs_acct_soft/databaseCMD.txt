@@ -1,0 +1,100 @@
+CREATE TABLE USERS(
+    uid int NOT NULL AUTO_INCREMENT,
+    firstName varchar(255),
+    lastName varchar(255),
+    phone varchar(11),
+    passwrd varchar(255),
+    position varchar(255),
+    activated varchar(255),
+    PRIMARY KEY (uid)
+);
+
+
+CREATE TABLE families(
+    famid int NOT NULL AUTO_INCREMENT,
+    parent1 varchar(255) NOT NULL,
+    parent2 varchar(255) NOT NULL,
+    child1 int NOT NULL,
+    child2 int NOT NULL,
+    child3 int NOT NULL,
+    child4 int NOT NULL,
+    child5 int NOT NULL,
+    child6 int NOT NULL,
+    child7 int NOT NULL,
+    child8 int NOT NULL,
+    child9 int NOT NULL,
+    child10 int NOT NULL,
+    PRIMARY KEY (famid)
+);
+
+CREATE TABLE students(
+    studid int NOT NULL AUTO_INCREMENT,
+    firstName varchar(255) NOT NULL,
+    lastName varchar(255) NOT NULL,
+    class int NOT NULL,
+    famid int,
+    address varchar(255),
+    PRIMARY KEY (studid),
+    FOREIGN KEY(famid)
+    REFERENCES families(famid)
+);
+
+CREATE TABLE billsCategory(
+    billid int NOT NULL AUTO_INCREMENT,
+    billName varchar(255) NOT NULL,
+    amount decimal (6,2) NOT NULL,
+    PRIMARY KEY (billid)
+);
+
+
+CREATE TABLE discounts(
+    discid int NOT NULL AUTO_INCREMENT,
+    childNum int NOT NULL,
+    percentage int NOT NULL,
+    PRIMARY KEY (discid)
+);
+
+
+CREATE TABLE staff(
+    staffid int NOT NULL AUTO_INCREMENT,
+    firstName varchar(255) NOT NULL,
+    lastName varchar(255) NOT NULL,
+    subject int NOT NULL,
+    staffFamid int,
+    address varchar(255),
+    PRIMARY KEY (staffid)
+);
+
+
+CREATE TABLE staffFamilies(
+    staffFamid int NOT NULL AUTO_INCREMENT,
+    staffid int,
+    child1 int NOT NULL,
+    child2 int NOT NULL,
+    child3 int NOT NULL,
+    child4 int NOT NULL,
+    child5 int NOT NULL,
+    child6 int NOT NULL,
+    child7 int NOT NULL,
+    child8 int NOT NULL,
+    child9 int NOT NULL,
+    child10 int NOT NULL,
+    PRIMARY KEY (staffFamid),    
+    FOREIGN KEY(staffid)
+    REFERENCES staff(staffid)
+);
+
+CREATE TABLE finance(
+    studid int,
+    tuition decimal (6,2) NOT NULL,
+    uniform decimal (6,2) NOT NULL,
+    formAdmission decimal (6,2) NOT NULL,
+    books decimal (6,2) NOT NULL,
+    extraCurricular decimal (6,2) NOT NULL,
+    bus decimal (6,2) NOT NULL,
+    boarding decimal (6,2) NOT NULL,
+    misc decimal (6,2) NOT NULL,
+    totalPaid decimal (6,2) NOT NULL,
+    FOREIGN KEY(studid)
+    REFERENCES students(studid)
+);
